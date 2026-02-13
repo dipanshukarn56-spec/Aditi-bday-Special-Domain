@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Special Mam Ji</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            background-color: #ffe4e1; 
+            overflow-x: hidden; 
+            font-family: 'Poppins', sans-serif; 
+        }
+        
+        .page {
+            display: none;
+            height: 100vh;
+            width: 100vw;
+            background-size: cover;
+            background-position: center;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            animation: popFade 0.6s ease-out;
+        }
+
+        .active { display: flex; }
+
+        @keyframes popFade {
+            0% { opacity: 0; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        h1 {
+            color: #ff69b4;
+            text-shadow: 2px 2px white;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 15px;
+            padding: 15px;
+            font-family: 'Dancing Script', cursive; /* Cursive touch for headings */
+        }
+
+        .btn-container { display: flex; flex-direction: column; gap: 15px; z-index: 10; width: 100%; align-items: center; }
+        .row { flex-direction: row !important; justify-content: center; }
+
+        button {
+            padding: 12px 25px;
+            font-size: 0.9rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            font-weight: 600;
+            transition: 0.3s;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        button:hover { transform: scale(1.05); }
+
+        .btn-yes { background-color: #90ee90; color: #155724; }
+        .btn-no { background-color: #f08080; color: #721c24; }
+
+        .sticker { width: 100px; position: absolute; z-index: 2; border-radius: 12px; }
+        
+        textarea {
+            width: 90%;
+            height: 110px;
+            border-radius: 15px;
+            padding: 12px;
+            border: 2px solid #ff69b4;
+            margin: 15px 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .msg-box {
+            background: rgba(255, 255, 255, 0.92);
+            padding: 20px;
+            border-radius: 20px;
+            font-size: 1rem;
+            line-height: 1.6;
+            max-width: 90%;
+            border: 3px solid #ff69b4;
+            color: #333;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="page1" class="page active" style="background-image: url('1000104267.png');">
+        <h1>Kya apka bdayyy hai mam ji</h1>
+        <div class="btn-container row">
+            <button class="btn-yes" onclick="nextPage(2)">Yes</button>
+            <button class="btn-no" onclick="location.reload()">No</button>
+        </div>
+    </div>
+
+    <div id="page2" class="page" style="background-image: url('1000104345.png');">
+        <h1 style="color: black;">Kya plan hai apka...<br>mujhe chocolate milaga ?</h1>
+        <div class="btn-container row">
+            <button class="btn-yes" onclick="nextPage(4)">haan dungi</button>
+            <button class="btn-no" onclick="nextPage(3)">nhi somry</button>
+        </div>
+        <img src="1000104253.jpg" class="sticker auto-fix" style="bottom: 8%; left: 8%;">
+        <img src="1000104260.jpg" class="sticker auto-fix" style="top: 12%; right: 8%;">
+    </div>
+
+    <div id="page3" class="page" style="background-image: url('1000104345.png');">
+        <img src="1000104256.jpg" class="auto-fix" style="width: 250px; border-radius: 20px;">
+        <button class="btn-yes" style="margin-top:20px;" onclick="nextPage(2)">Wapas Chalo!</button>
+    </div>
+
+    <div id="page4" class="page" style="background-image: url('1000104346.jpg');">
+        <h1>kya yeh mera low effort wala website accha laga apko</h1>
+        <div class="btn-container">
+            <button class="btn-yes" onclick="nextPage(6)">1. Student ki mehnat rang lie <img src="1000104250.jpg" class="auto-fix" style="width:25px; vertical-align:middle;"></button>
+            <button class="btn-no" onclick="nextPage(5)">2. Nah student ko padha ne ka fayda nahi hua <img src="1000104251.jpg" class="auto-fix" style="width:25px; vertical-align:middle;"></button>
+        </div>
+    </div>
+
+    <div id="page5" class="page" style="background-image: url('1000099511.png');">
+        <h1 style="color: white; text-shadow: 2px 2px 10px black; background: none;">please forgive me mam me no good</h1>
+        <button class="btn-yes" onclick="nextPage(4)">Ek chance aur?</button>
+    </div>
+
+    <div id="page6" class="page" style="background-image: url('1000104348.jpg');">
+        <h1>Mam kya ap kuch likna chahenge...</h1>
+        <form action="https://formspree.io/f/dipanshukarn56@gmail.com" method="POST" onsubmit="event.preventDefault(); nextPage(7);" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <textarea name="message" placeholder="Likhiye..."></textarea>
+            <button type="submit" class="btn-yes">SEND <img src="1000104257.jpg" class="auto-fix" style="width:20px; vertical-align:middle;"></button>
+        </form>
+    </div>
+
+    <div id="page7" class="page" style="background-image: url('1000104349.png');">
+        <div class="msg-box">
+            Sabse pehle thank you ma’am. 2024 se leke ab tak pure 2 saal — offline bhi, online bhi — aapne mujhe tolerate kiya 😅... Effort dil se hai, budget thoda student type hai 😄
+        </div>
+        <img src="1000104249.jpg" class="sticker auto-fix" style="top:5%; left:5%; width: 80px;">
+        <img src="1000104254.jpg" class="sticker auto-fix" style="top:5%; right:5%; width: 80px;">
+        <img src="1000104258.jpg" class="sticker auto-fix" style="bottom:5%; left:5%; width: 80px;">
+        <button class="btn-yes" style="margin-top: 20px;" onclick="nextPage(8)">Apka effort appreciated</button>
+    </div>
+
+    <div id="page8" class="page" style="background-image: url('sc.jpeg'); background-size: 100% 100%;">
+        <div style="background: rgba(0,0,0,0.5); padding: 25px; border-radius: 25px; width: 90%; z-index: 10;">
+            <h1 style="color:white; background:none; text-shadow: none; font-size: 1.4rem;">Kya apne mera instagram per mention dekha</h1>
+            
+            <div style="margin-bottom: 40px; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                <button class="btn-yes" onclick="nextPage(10)" style="background-color: #00acee; color: white;">Hn</button> 
+                <img src="1000104255.jpg" class="auto-fix" style="width:50px; border-radius: 50%; border: 2px solid white;">
+                <img src="1000104248.jpg" class="auto-fix" style="width:50px; border-radius: 50%; border: 2px solid white;">
+            </div>
+
+            <div style="display: flex; align-items: center; justify-content: center; gap: 15px;">
+                <button class="btn-no" onclick="nextPage(9)">Na</button>
+                <img src="1000104252.jpg" class="auto-fix" style="width:55px; border-radius: 10px;">
+            </div>
+        </div>
+    </div>
+
+    <div id="page9" class="page" style="background-color: #1a1a1a;">
+        <img src="1000104256.jpg" class="auto-fix" style="width: 220px; border-radius: 20px;">
+        <p style="color: white; margin: 20px; font-size: 0.9rem;">plz mam thoda attention dedo innocence dekho mam ko maska marne ka koshis bhi toh plz attention</p>
+        <button class="btn-yes" onclick="nextPage(8)">Theek hai, dekhti hoon!</button>
+    </div>
+
+    <div id="page10" class="page" style="background-image: url('sc1.png'); background-size: 100% 100%;">
+        <div class="msg-box" style="font-weight: 600; color: #ff69b4; border: 4px solid #ff69b4;">
+            Thnx mam ap bade pyare ho themku mereko attention mei rakhne ke liye and mera web khatam bye ao jaa skte hai
+        </div>
+        <img src="1000104249.jpg" class="sticker auto-fix" style="bottom: 10%; left: 10%;">
+        <img src="1000104250.jpg" class="sticker auto-fix" style="bottom: 10%; right: 10%;">
+    </div>
+
+    <script>
+        // SMART FIX: Automatic check for .jpg and .jpeg
+        document.querySelectorAll('.auto-fix').forEach(img => {
+            img.onerror = function() {
+                if (this.src.includes('.jpg')) {
+                    this.src = this.src.replace('.jpg', '.jpeg');
+                } else if (this.src.includes('.jpeg')) {
+                    this.src = this.src.replace('.jpeg', '.jpg');
+                }
+            };
+        });
+
+        function nextPage(n) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById('page' + n).classList.add('active');
+            window.scrollTo(0,0);
+        }
+    </script>
+</body>
+</html>
